@@ -1,0 +1,815 @@
+<HTML>
+<STYLE TYPE="TEXT/CSS">
+TABLE.UML {
+	BORDER-WIDTH: 1PX 1PX 1PX 1PX;
+	BORDER-SPACING: 0PX;
+	BORDER-STYLE: SOLID SOLID SOLID SOLID;
+	BORDER-COLOR: BLACK BLACK BLACK BLACK;
+	BORDER-COLLAPSE: SEPARATE;
+	BACKGROUND-COLOR: WHITE;
+}
+
+CODE {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 80%;
+}
+
+PRE {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 80%;
+}
+
+H1 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 144%;
+	FONT-STYLE: BOLD;
+}
+
+H2 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 120%;
+	FONT-STYLE: BOLD;
+}
+
+H3 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 100%;
+	FONT-STYLE: BOLD;
+}
+
+</STYLE>
+<HEAD>
+<TITLE>
+University</TITLE>
+</HEAD>
+<BODY>
+<H1>University</H1>
+<B>author&#40;s&#41;: </B>Reena Bharath
+<BR>
+<P>
+1&#41;Class Name:<BR>
+          University: <BR>
+   Attributes: <BR>
+		universityName&#44;address&#44; email&#44; contact<BR>
+<BR>
+    Subclass<BR>
+		 Course    <BR>
+    Attributes:  <BR>
+         type&#40;bachelors/masters..&#41; &#44;name&#44; length and fee.<BR>
+<BR>
+     Methods:<BR>
+         getfees  &#40;check if fees is expensive&#41;   <BR>
+<BR>
+2&#41;Class Name<BR>
+        Teacher:  <BR>
+   Attributes: <BR>
+		firstName&#44; surName&#44; id&#44;experience and salary  <BR>
+   Methods: <BR>
+		salaryRange&#40;if salary is good based on experience&#41;<BR>
+            training &#40;If the experiene is below 2 years&#44; then the teacher has to undergo a training&#41;<BR>
+<BR>
+3&#41;Class<BR>
+        Student:  <BR>
+  Attributes: <BR>
+		firstName&#44; surName&#44; id&#44; schoolScores and bankDetails<BR>
+  Methods: <BR>
+		previousScores  &#40;checks if the scores got in high school is good or average&#41;<BR>
+<BR>
+ 
+</P>
+
+<BR>
+<HR>
+<H2>Workspace</H2>
+<PRE>Courses select: [: x | x getfees = &#39;Expensive&#39;].
+Courses select: [: x | x type = &#39;Masters&#39;].
+
+Students select: [: y | y previousScores = &#39;Average&#39;].
+Students select: [: y | y surName = &#39;Gates&#39;].
+
+Teachers select: [: z | z salaryRange = &#39;Good&#39;].
+Teachers select: [: z | z training = &#39;Training Needed&#39;].</PRE>
+<H4>Workspace Objects</H4>
+<UL>
+
+<BR>
+<LI>
+<CODE>
+Courses :Set
+</CODE>
+<LI>
+<CODE>
+Students :Set
+</CODE>
+<LI>
+<CODE>
+Teachers :Set
+</CODE>
+</UL>
+
+<BR>
+<HR>
+<H2>Script</H2>
+<PRE>Teachers := Set new.
+Courses := Set new.
+Students := Set new.
+
+
+&quot;_______Courses__________&quot;
+c1 := Course new.
+c1 universityName: &#39;CZU&#39;.
+c1 address: &#39;Kam&#253;ck&#225;&#39;.
+c1 email: &#39;czu@gmail.com&#39;.
+c1 contact: 42022438111.
+c1 type: &#39;Bachelors&#39;.
+c1 name: &#39;Informatics&#39;. 
+c1 length: 3.
+c1 fee: 15000.
+
+c2 := Course new.
+c2 universityName: &#39;CZU&#39;.
+c2 address: &#39;Kam&#253;ck&#225;&#39;.
+c2 email: &#39;czu@gmail.com&#39;.
+c2 contact: 42022438111.
+c2 type: &#39;Masters&#39;.
+c2 name: &#39;Informatics&#39;. 
+c2 length: 2.
+c2 fee: 25000.
+
+c3 := Course new.
+c3 universityName: &#39;CZU&#39;.
+c3 address: &#39;Kam&#253;ck&#225;&#39;.
+c3 email: &#39;czu@gmail.com&#39;.
+c3 contact: 42022438111.
+c3 type: &#39;Bachelors&#39;.
+c3 name: &#39;Agriculture&#39;. 
+c3 length: 3.
+c3 fee: 80000.
+
+c4 := Course new.
+c4 universityName: &#39;CZU&#39;.
+c4 address: &#39;Kam&#253;ck&#225;&#39;.
+c4 email: &#39;czu@gmail.com&#39;.
+c4 contact: 42022438111.
+c4 type: &#39;Masters&#39;.
+c4 name: &#39;Agriculture&#39;. 
+c4 length: 2.
+c4 fee: 85000.
+
+c5 := Course new.
+c5 universityName: &#39;CZU&#39;.
+c5 address: &#39;Kam&#253;ck&#225;&#39;.
+c5 email: &#39;czu@gmail.com&#39;.
+c5 contact: 42022438111.
+c5 type: &#39;Doctoral&#39;.
+c5 name: &#39;Agriculture&#39;. 
+c5 length: 2.
+c5 fee: 12000.
+
+
+c6 := Course new.
+c6 universityName: &#39;CZU&#39;.
+c6 address: &#39;Kam&#253;ck&#225;&#39;.
+c6 email: &#39;czu@gmail.com&#39;.
+c6 contact: 42022438111.
+c6 type: &#39;Masters&#39;.
+c6 name: &#39;Electrical&#39;. 
+c6 length: 2.
+c6 fee: 15000.
+
+c7 := Course new.
+c7 universityName: &#39;CZU&#39;.
+c7 address: &#39;Kam&#253;ck&#225;&#39;.
+c7 email: &#39;czu@gmail.com&#39;.
+c7 contact: 42022438111.
+c7 type: &#39;Doctoral&#39;.
+c7 name: &#39;Electrical&#39;. 
+c7 length: 4.
+c7 fee: 21000.
+
+Courses add: c1; add: c2; add: c3; add: c4; add: c5; add: c6; add: c7. 
+
+
+&quot;________Teachers___________&quot;
+t1 := Teacher new.
+t1 firstName: &#39;Micheal&#39;.
+t1 surName: &#39;Jason&#39;. 
+t1 id: 001.
+t1 experience: 1. 
+t1 salary: 15000.
+t1 teach: c1.
+
+t2 := Teacher new.
+t2 firstName: &#39;Selena&#39;.
+t2 surName: &#39;Gomez&#39;. 
+t2 id: 002.
+t2 experience: 3. 
+t2 salary: 21000.
+t2 teach: c2.
+
+t3 := Teacher new.
+t3 firstName: &#39;Morgan&#39;.
+t3 surName: &#39;FreeMan&#39;. 
+t3 id: 003.
+t3 experience: 4. 
+t3 salary: 25000.
+t3 teach: c3.
+
+t4 := Teacher new.
+t4 firstName: &#39;Fernandez&#39;.
+t4 surName: &#39;Catherine&#39;. 
+t4 id: 004.
+t4 experience: 2. 
+t4 salary: 17000.
+t4 teach: c4.
+
+t5 := Teacher new.
+t5 firstName: &#39;Justin&#39;.
+t5 surName: &#39;Bieber&#39;. 
+t5 id: 005.
+t5 experience: 3. 
+t5 salary: 23000.
+t5 teach: c5.
+
+t6 := Teacher new.
+t6 firstName: &#39;Kim&#39;.
+t6 surName: &#39;Kardashian&#39;. 
+t6 id: 006.
+t6 experience: 5. 
+t6 salary: 19000.
+t6 teach: c6.
+
+t7 := Teacher new.
+t7 firstName: &#39;Shawn&#39;.
+t7 surName: &#39;Mendes&#39;. 
+t7 id: 007.
+t7 experience: 3. 
+t7 salary: 26000.
+t7 teach: c7.
+
+Teachers add: t1; add: t2 ; add: t3; add: t4; add: t5; add: t6; add: t7.
+
+&quot;_________Students___________&quot;
+s1 := Student new.
+s1 firstName: &#39;Dua&#39;.
+s1 surName: &#39;Lipa&#39;. 
+s1 id: 101.
+s1 bankDetails: &#39;111/222&#39;.
+s1 schoolScores: 99.
+s1 learn: c1.
+
+s2 := Student new.
+s2 firstName: &#39;Ariana&#39;.
+s2 surName: &#39;Grade&#39;. 
+s2 id: 102.
+s2 bankDetails: &#39;222/333&#39;.
+s2 schoolScores: 82.
+s2 learn: c2.
+
+s3 := Student new.
+s3 firstName: &#39;Harry&#39;.
+s3 surName: &#39;Styles&#39;. 
+s3 id: 103.
+s3 bankDetails: &#39;333/444&#39;.
+s3 schoolScores: 46.
+s3 learn: c3.
+
+s4 := Student new.
+s4 firstName: &#39;Katy&#39;.
+s4 surName: &#39;Perry&#39;. 
+s4 id: 104.
+s4 bankDetails: &#39;444/555&#39;.
+s4 schoolScores: 43.
+s4 learn: c4.
+
+s5 := Student new.
+s5 firstName: &#39;Bill&#39;.
+s5 surName: &#39;Gates&#39;. 
+s5 id: 105.
+s5 bankDetails: &#39;555/666&#39;.
+s5 schoolScores: 48.
+s5 learn: c5.
+
+s6 := Student new.
+s6 firstName: &#39;Mark&#39;.
+s6 surName: &#39;Berg&#39;. 
+s6 id: 106.
+s6 bankDetails: &#39;666/777&#39;.
+s6 schoolScores: 93.
+s6 learn: c6.
+
+s7 := Student new.
+s7 firstName: &#39;Lady&#39;.
+s7 surName: &#39;Gaga&#39;. 
+s7 id: 107.
+s7 bankDetails: &#39;777/888&#39;.
+s7 schoolScores: 41.
+s7 learn: c7.
+
+s8 := Student new.
+s8 firstName: &#39;Simran&#39;.
+s8 surName: &#39;Alia&#39;. 
+s8 id: 108.
+s8 bankDetails: &#39;888/999&#39;.
+s8 schoolScores: 62.
+s8 learn: c4.
+
+s9 := Student new.
+s9 firstName: &#39;Taylor&#39;.
+s9 surName: &#39;Swift&#39;. 
+s9 id: 109.
+s9 bankDetails: &#39;999/000&#39;.
+s9 schoolScores: 78.
+s9 learn: c6.
+
+Students add: s1; add: s2; add: s3; add: s4; add: s5; add: s6; add: s7; add: s8; add: s9.</PRE>
+<HR>
+<H2>Diagram</H2>
+<IMG SRC="UniversittyOMProject.gif">
+<HR>
+<H2>Classes</H2>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+University
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+address :String
+</CODE>
+<BR>
+<CODE>
+contact :Number
+</CODE>
+<BR>
+<CODE>
+email :String
+</CODE>
+<BR>
+<CODE>
+universityName :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+address
+</CODE>
+<BR>
+<CODE>
+address:
+</CODE>
+<BR>
+<CODE>
+contact
+</CODE>
+<BR>
+<CODE>
+contact:
+</CODE>
+<BR>
+<CODE>
+email
+</CODE>
+<BR>
+<CODE>
+email:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+universityName
+</CODE>
+<BR>
+<CODE>
+universityName:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+This class implements instances&#44; which stores data about University which as a subclass Course
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     universityName := nil.
+     address := nil.
+     email := nil.
+     contact := nil.</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Teacher
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+experience :Number
+</CODE>
+<BR>
+<CODE>
+firstName :String
+</CODE>
+<BR>
+<CODE>
+id :Number
+</CODE>
+<BR>
+<CODE>
+salary :Number
+</CODE>
+<BR>
+<CODE>
+surName :String
+</CODE>
+<BR>
+<CODE>
+teach :Object
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+experience
+</CODE>
+<BR>
+<CODE>
+experience:
+</CODE>
+<BR>
+<CODE>
+firstName
+</CODE>
+<BR>
+<CODE>
+firstName:
+</CODE>
+<BR>
+<CODE>
+id
+</CODE>
+<BR>
+<CODE>
+id:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+salary
+</CODE>
+<BR>
+<CODE>
+salary:
+</CODE>
+<BR>
+<CODE>
+salaryRange
+</CODE>
+<BR>
+<CODE>
+surName
+</CODE>
+<BR>
+<CODE>
+surName:
+</CODE>
+<BR>
+<CODE>
+teach
+</CODE>
+<BR>
+<CODE>
+teach:
+</CODE>
+<BR>
+<CODE>
+training
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+This class implements instances&#44; which stores data about Teachers
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     firstName := nil.
+     surName := nil.
+     id := nil.
+     experience := nil.
+     salary := nil.
+     teach := nil.</PRE>
+<LI>
+<B><CODE>
+salaryRange
+</CODE></B>
+<PRE>
+	| sm1 sm2 |
+	sm1 := &#39;Good&#39;.
+	sm2 := &#39;Average&#39;.
+	salary &gt; 20000 ifTrue: [^sm1] ifFalse: [^sm2]</PRE>
+<LI>
+<B><CODE>
+training
+</CODE></B>
+<PRE>
+	| tm1 tm2 |
+	tm1 := &#39;No Training Needed&#39;.
+	tm2 := &#39;Training Needed&#39;.
+	experience &gt; 2 ifTrue: [^tm1] ifFalse: [^tm2]</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Student
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+bankDetails :String
+</CODE>
+<BR>
+<CODE>
+firstName :String
+</CODE>
+<BR>
+<CODE>
+id :Number
+</CODE>
+<BR>
+<CODE>
+learn :Object
+</CODE>
+<BR>
+<CODE>
+schoolScores :Number
+</CODE>
+<BR>
+<CODE>
+surName :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+bankDetails
+</CODE>
+<BR>
+<CODE>
+bankDetails:
+</CODE>
+<BR>
+<CODE>
+firstName
+</CODE>
+<BR>
+<CODE>
+firstName:
+</CODE>
+<BR>
+<CODE>
+id
+</CODE>
+<BR>
+<CODE>
+id:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+learn
+</CODE>
+<BR>
+<CODE>
+learn:
+</CODE>
+<BR>
+<CODE>
+previousScores
+</CODE>
+<BR>
+<CODE>
+schoolScores
+</CODE>
+<BR>
+<CODE>
+schoolScores:
+</CODE>
+<BR>
+<CODE>
+surName
+</CODE>
+<BR>
+<CODE>
+surName:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+This class implements instances&#44; which stores data about Students
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     firstName := nil.
+     surName := nil.
+     id := nil.
+     bankDetails := nil.
+     learn := nil.
+     schoolScores := nil.</PRE>
+<LI>
+<B><CODE>
+previousScores
+</CODE></B>
+<PRE>
+	| pm1 pm2 |
+	pm1 := &#39;Good&#39;.
+	pm2 := &#39;Average&#39;.
+	schoolScores &gt; 50 ifTrue: [^pm1] ifFalse: [^pm2]</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Course
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+fee :Number
+</CODE>
+<BR>
+<CODE>
+length :Number
+</CODE>
+<BR>
+<CODE>
+name :String
+</CODE>
+<BR>
+<CODE>
+type :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+fee
+</CODE>
+<BR>
+<CODE>
+fee:
+</CODE>
+<BR>
+<CODE>
+getfees
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+length
+</CODE>
+<BR>
+<CODE>
+length:
+</CODE>
+<BR>
+<CODE>
+name
+</CODE>
+<BR>
+<CODE>
+name:
+</CODE>
+<BR>
+<CODE>
+type
+</CODE>
+<BR>
+<CODE>
+type:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+This class implements instances&#44; which stores data about Course offered in University
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+getfees
+</CODE></B>
+<PRE>
+	| fm1 fm2 |
+	fm1 := &#39;Expensive&#39;.
+	fm2 := &#39;Cheap&#39;.
+	fee &gt; 21000 ifTrue: [^fm1] ifFalse: [^fm2]</PRE>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     type := nil.
+     name := nil.
+     length := nil.
+     fee := nil.</PRE>
+</UL>
+<HR>
+<H2>Links</H2>
+<A HREF="UniversittyOMProject.xml">Data file</A> and 
+<A HREF="UniversittyOMProject.st">class source</A>.
+
+<BR>
+
+<BR>
+<CODE>
+Generated by Daskalos - Object Modeling Tutor &#40;C&#41; 2006 V. Merunka
+</CODE>
+
+<BR>
+<CODE>
+April 25&#44; 2024
+</CODE>
+</BODY></HTML>

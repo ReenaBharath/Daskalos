@@ -1,0 +1,661 @@
+<HTML>
+<STYLE TYPE="TEXT/CSS">
+TABLE.UML {
+	BORDER-WIDTH: 1PX 1PX 1PX 1PX;
+	BORDER-SPACING: 0PX;
+	BORDER-STYLE: SOLID SOLID SOLID SOLID;
+	BORDER-COLOR: BLACK BLACK BLACK BLACK;
+	BORDER-COLLAPSE: SEPARATE;
+	BACKGROUND-COLOR: WHITE;
+}
+
+CODE {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 80%;
+}
+
+PRE {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 80%;
+}
+
+H1 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 144%;
+	FONT-STYLE: BOLD;
+}
+
+H2 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 120%;
+	FONT-STYLE: BOLD;
+}
+
+H3 {
+	FONT-FAMILY: ARIAL;
+	FONT-SIZE: 100%;
+	FONT-STYLE: BOLD;
+}
+
+</STYLE>
+<HEAD>
+<TITLE>
+Airlines</TITLE>
+</HEAD>
+<BODY>
+<H1>Airlines</H1>
+<B>author&#40;s&#41;: </B>Reena Bharath
+<BR>
+<P>
+This Project has 3 class<BR>
+1. Airline<BR>
+2. Employees<BR>
+3. Passengers<BR>
+<BR>
+And Tickets are the SubClasses of Tickets
+</P>
+
+<BR>
+<HR>
+<H2>Workspace</H2>
+<PRE>Employees select: [: z | z jobPosition = &#39;Air Hosters&#39;].
+Employees select: [: z | z salaryRange = &#39;Average&#39;].
+
+Passengers select: [: z | z lastName = &#39;Sam&#39;].
+Passengers select: [: z | z purposeOfTravel = &#39;Vacation&#39;].
+
+Tickets select: [: z | z dateOfTravel &gt; &#39;30-APR-2022&#39; asDate].
+Tickets select: [: z | z arrival = &#39;Praha&#39;].</PRE>
+<H4>Workspace Objects</H4>
+<UL>
+
+<BR>
+<LI>
+<CODE>
+Airlines :Set
+</CODE>
+<LI>
+<CODE>
+Employees :Set
+</CODE>
+<LI>
+<CODE>
+Passengers :Set
+</CODE>
+<LI>
+<CODE>
+Tickets :Set
+</CODE>
+</UL>
+
+<BR>
+<HR>
+<H2>Script</H2>
+<PRE>Employees := Set new.
+Passengers := Set new.
+Tickets := Set new.
+Airlines := Set new.
+
+&quot;________Airliness___________&quot;
+a1 := Airline new.
+a1 name: &#39;ABCD Airlines&#39;.
+a1 contact: 79878188. 
+a1 headquarters: &#39;San Fransisco&#39;.
+
+&quot;________Employees___________&quot;
+e1 := Employee new.
+e1 firstName: &#39;Micheal&#39;.
+e1 lastName: &#39;Jason&#39;. 
+e1 id: 001.
+e1 salary: 120000.
+e1 jobPosition: &#39;Air Hosters&#39;.
+
+e2 := Employee new.
+e2 firstName: &#39;Tom&#39;.
+e2 lastName: &#39;Athreya&#39;. 
+e2 id: 002.
+e2 salary: 50000.
+e2 jobPosition: &#39;Manager&#39;.
+
+e3 := Employee new.
+e3 firstName: &#39;Jerry&#39;.
+e3 lastName: &#39;Mad&#39;. 
+e3 id: 003.
+e3 salary: 150000.
+e3 jobPosition: &#39;Pilot&#39;.
+
+e4 := Employee new.
+e4 firstName: &#39;Jonathon&#39;.
+e4 lastName: &#39;Maggi&#39;. 
+e4 id: 004.
+e4 salary: 60000.
+e4 jobPosition: &#39;Manager&#39;.
+
+e5 := Employee new.
+e5 firstName: &#39;Hannah&#39;.
+e5 lastName: &#39;Perousia&#39;. 
+e5 id: 005.
+e5 salary: 150000.
+e5 jobPosition: &#39;Air Hosters&#39;.
+
+&quot;________Passengers___________&quot;
+p1 := Passenger new.
+p1 firstName: &#39;Micheal&#39;.
+p1 lastName: &#39;Jason&#39;. 
+p1 idType: &#39;Passport&#39;.
+p1 purposeOfTravel: &#39;Vacation&#39;.
+
+p2 := Passenger new.
+p2 firstName: &#39;Muthasir&#39;.
+p2 lastName: &#39;Sam&#39;. 
+p2 idType: &#39;Permenant Residence Card&#39;.
+p2 purposeOfTravel: &#39;Business&#39;.
+
+p3 := Passenger new.
+p3 firstName: &#39;Badri&#39;.
+p3 lastName: &#39;Janathan&#39;. 
+p3 idType: &#39;Passport&#39;.
+p3 purposeOfTravel: &#39;Study&#39;.
+
+p4 := Passenger new.
+p4 firstName: &#39;Josua&#39;.
+p4 lastName: &#39;Samuel&#39;. 
+p4 idType: &#39;Driving License&#39;.
+p4 purposeOfTravel: &#39;Vacation&#39;.
+
+&quot;________Tickets___________&quot;
+t1 := Ticket new.
+t1 name: &#39;ABCD Airlines&#39;.
+t1 contact: 79878188. 
+t1 headquarters: &#39;San Fransisco&#39;.
+t1 departure: &#39;New York&#39;.
+t1 arrival: &#39;Praha&#39;.
+t1 dateOfTravel: &#39;15-AUG-2022&#39; asDate.
+t1 ticketId: 112233.
+
+t2 := Ticket new.
+t2 name: &#39;ABCD Airlines&#39;.
+t2 contact: 79878188. 
+t2 headquarters: &#39;San Fransisco&#39;.
+t2 departure: &#39;Greenland&#39;.
+t2 arrival: &#39;Dubai&#39;.
+t2 dateOfTravel: &#39;21-SEP-2022&#39; asDate.
+t2 ticketId: 223344.
+
+t3 := Ticket new.
+t3 name: &#39;ABCD Airlines&#39;.
+t3 contact: 79878188. 
+t3 headquarters: &#39;San Fransisco&#39;.
+t3 departure: &#39;UK&#39;.
+t3 arrival: &#39;Iceland&#39;.
+t3 dateOfTravel: &#39;21-FEB-2022&#39; asDate.
+t3 ticketId: 14566.
+
+t4 := Ticket new.
+t4 name: &#39;ABCD Airlines&#39;.
+t4 contact: 79878188. 
+t4 headquarters: &#39;San Fransisco&#39;.
+t4 departure: &#39;India&#39;.
+t4 arrival: &#39;Germany&#39;.
+t4 dateOfTravel: &#39;20-DEC-2022&#39; asDate.
+t4 ticketId: 893672.
+
+Airlines add: a1.
+Employees add: e1; add: e2; add: e3; add: e4; add: e5. 
+Passengers add: p1; add: p2; add: p3; add: p4.
+Tickets add:t1; add: t2; add: t3; add: t4.
+
+e1 workIn: a1.
+e2 workIn: a1.
+e3 workIn: a1.
+e4 workIn: a1.
+e5 workIn: a1.
+
+e1 worksFor: p1.
+e2 worksFor: p2.
+e3 worksFor: p3.
+e4 worksFor: p4.
+e5 worksFor: p1.
+
+p1 buy: t1.
+p2 buy: t2.
+p3 buy: t3.
+p4 buy: t4.</PRE>
+<HR>
+<H2>Diagram</H2>
+<IMG SRC="Airlines.gif">
+<HR>
+<H2>Classes</H2>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Airline
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+contact :Number
+</CODE>
+<BR>
+<CODE>
+headquarters :String
+</CODE>
+<BR>
+<CODE>
+name :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+contact
+</CODE>
+<BR>
+<CODE>
+contact:
+</CODE>
+<BR>
+<CODE>
+headquarters
+</CODE>
+<BR>
+<CODE>
+headquarters:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+name
+</CODE>
+<BR>
+<CODE>
+name:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+This Airline Class has instances such as name&#44;address and headquarters
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     name := nil.
+     contact := nil.
+     headquarters := nil.</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Passenger
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+buy :Object
+</CODE>
+<BR>
+<CODE>
+firstName :String
+</CODE>
+<BR>
+<CODE>
+idType :String
+</CODE>
+<BR>
+<CODE>
+lastName :String
+</CODE>
+<BR>
+<CODE>
+purposeOfTravel :String
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+buy
+</CODE>
+<BR>
+<CODE>
+buy:
+</CODE>
+<BR>
+<CODE>
+firstName
+</CODE>
+<BR>
+<CODE>
+firstName:
+</CODE>
+<BR>
+<CODE>
+idType
+</CODE>
+<BR>
+<CODE>
+idType:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+lastName
+</CODE>
+<BR>
+<CODE>
+lastName:
+</CODE>
+<BR>
+<CODE>
+purposeOfTravel
+</CODE>
+<BR>
+<CODE>
+purposeOfTravel:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+This Passenger Class has instances such first name&#44;last name&#44; id type and purpose of travel
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     firstName := nil.
+     lastName := nil.
+     idType := nil.
+     purposeOfTravel := nil.
+     buy := nil.</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Employee
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+firstName :String
+</CODE>
+<BR>
+<CODE>
+id :Number
+</CODE>
+<BR>
+<CODE>
+jobPosition :String
+</CODE>
+<BR>
+<CODE>
+lastName :String
+</CODE>
+<BR>
+<CODE>
+salary :Number
+</CODE>
+<BR>
+<CODE>
+workIn :Object
+</CODE>
+<BR>
+<CODE>
+worksFor :Object
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+firstName
+</CODE>
+<BR>
+<CODE>
+firstName:
+</CODE>
+<BR>
+<CODE>
+id
+</CODE>
+<BR>
+<CODE>
+id:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+jobPosition
+</CODE>
+<BR>
+<CODE>
+jobPosition:
+</CODE>
+<BR>
+<CODE>
+lastName
+</CODE>
+<BR>
+<CODE>
+lastName:
+</CODE>
+<BR>
+<CODE>
+salary
+</CODE>
+<BR>
+<CODE>
+salary:
+</CODE>
+<BR>
+<CODE>
+salaryRange
+</CODE>
+<BR>
+<CODE>
+workIn
+</CODE>
+<BR>
+<CODE>
+workIn:
+</CODE>
+<BR>
+<CODE>
+worksFor
+</CODE>
+<BR>
+<CODE>
+worksFor:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+This Employee Class has instances such as first name&#44;last name&#44; id&#44; job position  and salary
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     firstName := nil.
+     lastName := nil.
+     id := nil.
+     jobPosition := nil.
+     salary := nil.
+     workIn := nil.
+     worksFor := nil.</PRE>
+<LI>
+<B><CODE>
+salaryRange
+</CODE></B>
+<PRE>
+	| sm1 sm2 |
+	sm1 := &#39;Good&#39;.
+	sm2 := &#39;Average&#39;.
+	salary &gt; 50000 ifTrue: [^sm1] ifFalse: [^sm2]</PRE>
+</UL>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH=100%>
+<TR>
+<TD WIDTH=20%>
+<TABLE WIDTH=95% BORDER="1" CELLSPACING="0" BORDERCOLOR=BLACK>
+<TR><TD><BIG>
+<B><CODE>
+Ticket
+</CODE></B>
+</BIG></TD></TR>
+<TR><TD>
+<I><SMALL>instance variables</SMALL></I><BR>
+<CODE>
+arrival :String
+</CODE>
+<BR>
+<CODE>
+dateOfTravel :Date
+</CODE>
+<BR>
+<CODE>
+departure :String
+</CODE>
+<BR>
+<CODE>
+ticketId :Number
+</CODE>
+<BR>
+</TD></TR>
+<TR><TD>
+<I><SMALL>methods</SMALL></I><BR>
+<CODE>
+arrival
+</CODE>
+<BR>
+<CODE>
+arrival:
+</CODE>
+<BR>
+<CODE>
+dateOfTravel
+</CODE>
+<BR>
+<CODE>
+dateOfTravel:
+</CODE>
+<BR>
+<CODE>
+departure
+</CODE>
+<BR>
+<CODE>
+departure:
+</CODE>
+<BR>
+<CODE>
+initialize
+</CODE>
+<BR>
+<CODE>
+ticketId
+</CODE>
+<BR>
+<CODE>
+ticketId:
+</CODE>
+<BR>
+</TD></TR>
+</TABLE>
+</TD>
+<TD VALIGN="TOP">
+<P>
+This Ticket class has instances such as arrival&#44; depature&#44; date of travel and the ticket id.
+</P>
+</TD>
+</TR>
+</TABLE>
+<H4>code of non-accessing methods: </H4>
+<UL>
+<LI>
+<B><CODE>
+initialize
+</CODE></B>
+<PRE>
+&quot;generated by Daskalos&quot;
+
+     super initialize.
+     arrival := nil.
+     dateOfTravel := nil.
+     departure := nil.
+     ticketId := nil.</PRE>
+</UL>
+<HR>
+<H2>Links</H2>
+<A HREF="Airlines.xml">Data file</A> and 
+<A HREF="Airlines.st">class source</A>.
+
+<BR>
+
+<BR>
+<CODE>
+Generated by Daskalos - Object Modeling Tutor &#40;C&#41; 2006 V. Merunka
+</CODE>
+
+<BR>
+<CODE>
+April 25&#44; 2024
+</CODE>
+</BODY></HTML>
